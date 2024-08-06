@@ -1,7 +1,4 @@
 import { useState } from "react";
-import { Switch } from "@headlessui/react";
-import { faCopy, faArrowsRotate } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Button from "./ui/Button";
 import Toggle from "./ui/Toggle";
 import Alert from "./ui/Alert";
@@ -37,7 +34,7 @@ export default function Card(): JSX.Element {
 
     if (characters === "") {
       setAlert("Please select at least one character type.");
-      setTimeout(() => setAlert(""), 3000); // Hide alert after 3 seconds
+      setTimeout(() => setAlert(""), 3000);
       return;
     }
 
@@ -54,12 +51,12 @@ export default function Card(): JSX.Element {
     navigator.clipboard.writeText(password).then(
       () => {
         setTooltip(true);
-        setTimeout(() => setTooltip(false), 2000); // Hide tooltip after 2 seconds
+        setTimeout(() => setTooltip(false), 2000);
       },
       (err) => {
         console.error("Could not copy text: ", err);
         setAlert("Failed to copy password.");
-        setTimeout(() => setAlert(""), 3000); // Hide alert after 3 seconds
+        setTimeout(() => setAlert(""), 3000);
       }
     );
   };
