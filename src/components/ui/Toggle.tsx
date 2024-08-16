@@ -7,7 +7,7 @@ type ToggleProps = {
   className?: string;
 };
 
-export default function Toggle(props: ToggleProps): any {
+export default function Toggle(props: ToggleProps): JSX.Element {
   const { upEnabled, setUpEnabled, text, className } = props;
   return (
     <div

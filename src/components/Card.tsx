@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { ChangeEvent, useState } from "react";
 import Button from "./ui/Button";
 import Toggle from "./ui/Toggle";
 import Alert from "./ui/Alert";
@@ -15,8 +15,8 @@ export default function Card(): JSX.Element {
   const [alert, setAlert] = useState("");
   const [tooltip, setTooltip] = useState(false);
 
-  const handleChange = (event: any) => {
-    const newValue = event.target.value;
+  const handleChange = (event:  ChangeEvent<HTMLInputElement>) => {
+    const newValue = Number(event.target.value);
     setLength(newValue);
   };
 
